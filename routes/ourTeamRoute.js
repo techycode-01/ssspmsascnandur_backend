@@ -8,7 +8,7 @@ router.post('/', createTeams);
 
 router.get('/all', allTeams);
 
-router.get('/single/:id',singleTeams);
+router.get('/single/:id', singleTeams);
 
 router.put('/update/:id', updateTeams);
 
