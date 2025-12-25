@@ -29,18 +29,21 @@ const blogRouter = require('./routes/blogRoute');
 const certificateRouter = require("./routes/certificateRoute");
 const upComingEventRouter = require("./routes/upComingEventRoute");
 const youtubeRouter = require("./routes/youtubeRoute")
-                   
+
 // mongodb connection
 connectDB();
 
 app.use(morgan("dev"));
-app.use(bodyParser.json({limit: '50mb'}));
+app.use(bodyParser.json({ limit: '50mb' }));
 app.use(cors());
-app.use(bodyParser.urlencoded({limit: '50mb', extended: false}));
+app.use(bodyParser.urlencoded({ limit: '50mb', extended: false }));
 app.use(cookieParser());
 // app.use("/files", express.static("files"))
 
 // routes
+app.use('/check', (req, res) => {
+  res.send('API is working properly');
+});
 app.use("/api/v1/auth", authRouter);
 app.use("/api/v1/upload", uploadRouter);
 app.use("/api/v1/contactQuery", contactFormRouter);
