@@ -26,6 +26,12 @@ const managementCommitteeRouter = require("./routes/managementCommitteeRoute");
 const cdcRouter = require("./routes/collegeDevelopmentCommitteeRoute");
 // teaching staff routes
 const teachingStaffRouter = require("./routes/teachingStaffRoute");
+
+// Academics routes
+const syllabusRouter = require("./routes/syllabusRoute");
+const academicCalendarRouter = require("./routes/academicCalendarRoute");
+const academicTimeTableRouter = require("./routes/academicTimeTableRoute");
+
 // team routes
 const teamRouter = require('./routes/ourTeamRoute');
 const clientRouter = require('./routes/testimonialRoute')
@@ -65,6 +71,13 @@ app.use("/api/v1/management-committee", managementCommitteeRouter);
 app.use("/api/v1/college-development-committee", cdcRouter);
 // teaching staff
 app.use("/api/v1/teaching-staff", teachingStaffRouter);
+
+//Academic 
+app.use("/api/v1/syllabus", syllabusRouter);
+app.use("/api/v1/academic-calendar", academicCalendarRouter);
+app.use("/api/v1/academic-time-table", academicTimeTableRouter);
+
+
 // our team
 app.use('/api/v1/team', teamRouter);
 app.use('/api/v1/testimonial', clientRouter)
