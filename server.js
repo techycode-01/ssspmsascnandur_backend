@@ -20,6 +20,10 @@ const phoneRouter = require('./routes/phoneRoute');
 const addressRouter = require('./routes/addressRoute');
 const emailRouter = require('./routes/EmailRoute');
 const mapRouter = require('./routes/mapRoute')
+// management committee routes
+const managementCommitteeRouter = require("./routes/managementCommitteeRoute");
+// college development committee routes
+const cdcRouter = require("./routes/collegeDevelopmentCommitteeRoute");
 // teaching staff routes
 const teachingStaffRouter = require("./routes/teachingStaffRoute");
 // team routes
@@ -54,6 +58,11 @@ app.use("/api/v1/certificate", certificateRouter)
 app.use('/api/v1/phone', phoneRouter);
 app.use('/api/v1/address', addressRouter);
 app.use('/api/v1/email', emailRouter);
+
+// management committee
+app.use("/api/v1/management-committee", managementCommitteeRouter);
+// college development committee
+app.use("/api/v1/college-development-committee", cdcRouter);
 // teaching staff
 app.use("/api/v1/teaching-staff", teachingStaffRouter);
 // our team
