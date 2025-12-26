@@ -4,20 +4,16 @@ const syllabusSchema = new mongoose.Schema(
     {
         title: {
             type: String,
-            required: true, // ✅ REQUIRED
+            required: true,
             trim: true,
         },
-
         fileUrl: {
-            public_id: {
-                type: String,
-            },
-            url: {
-                type: String,
-            },
+            public_id: String,
+            url: String,
         },
     },
     { timestamps: true }
 );
+
 
 module.exports = mongoose.model("Syllabus", syllabusSchema);
